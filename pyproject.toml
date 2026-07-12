@@ -1,0 +1,49 @@
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12"]
+build-backend = "uv_build"
+
+[project]
+name = "kernel-gym"
+version = "0.1.0"
+dependencies = [
+    "apache-tvm-ffi>=0.1.12",
+    "cupy-cuda13x>=14.1.1",
+    "nvidia-cutlass-dsl[cu13]>=4.6.0",
+]
+requires-python = ">=3.14"
+authors = [
+    {name = "gidora7"},
+]
+maintainers = [
+    {name = "gidora7"},
+]
+description = "Kernels for NVIDIA GPUs, written in CuTe DSL"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["cute", "dsl", "nvidia", "gpu"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1", 
+    "ruff>=0.15.21",
+]
+
+# [project.optional-dependencies]
+
+[tool.uv]
+python-preference = "only-managed"
+
+[tool.uv.build-backend]
+module-root = "."
+
+[project.urls]
+Homepage = ""
+Documentation = ""
+Repository = "https://github.com/gidora7/kernel-gym"
+"Bug Tracker" = ""
+Changelog = ""
